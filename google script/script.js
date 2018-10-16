@@ -4,7 +4,7 @@ function value_points(pos, numberEgality, duration, numberTeam, playerPerTeam, c
   }
   var result = 0;
   if(calculationMethod == "AVG"){
-    numberEgality = numberEgality + 1;
+    numberEgality = numberEgality;
   }
   else if(calculationMethod == "MAX"){
     numberEgality = 1;
