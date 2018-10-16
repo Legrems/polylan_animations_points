@@ -24,9 +24,9 @@ The number of team active in the animation.
 The number of player per team. For exemple, 5 for lol, 6 for OW, ...
 ### calculation_method
 There are 3 choices here :
- - "AVG"
+ - "AVG"__
 Calcul the average for the player in the same position. For example, if there are 3 players with 11, 9 and 7 points, the results will be 9 for the 3 players. This is the default use.
- - "MAX"
+ - "MAX"__
 With the same example as before, all 3 players will have 11 points.
- - "MIN"
+ - "MIN"__
 With the same example as before, all 3 players will have 7 points.
