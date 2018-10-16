@@ -1,17 +1,17 @@
 import math
 
-def value_points(pos, numberEgality, duration, number_team, player_per_team, calculationMethod):
+def value_points(pos, numberEgality, duration, number_team, player_per_team, calculation_method):
     """Calcul de la formule hyper wzf pour les points. Prends en compte les égalités. Dans le cas ou
     number_same_pos != 1, il faut la moyenne avec tous les points des pos entre pos et pos + number_same_pos
     """
     if pos > number_team or pos < 1:
         return 0
     result = 0
-    if(calculationMethod == "AVG"):
+    if(calculation_method == "AVG"):
         numberEgality = numberEgality + 1
-    elif(calculationMethod == "MAX"):
+    elif(calculation_method == "MAX"):
         numberEgality = 1
-    elif(calculationMethod == "MIN"):
+    elif(calculation_method == "MIN"):
         pos = pos + numberEgality;
         numberEgality = 1
     number_same_pos = min(max(numberEgality, 1), 256)
@@ -29,10 +29,10 @@ def value_points(pos, numberEgality, duration, number_team, player_per_team, cal
             result += max(round(a * b * c * d), 1)
     return round(result / number_same_pos)
 
-def value_points_tab(numberEgality, duration, numberTeam, playerPerTeam, calculationMethod):
+def value_points_tab(numberEgality, duration, numberTeam, playerPerTeam, calculation_method):
     output = "";
     if(numberEgality != 0):
         return "Egality must be 0 for the array"; 
     for j in range(numberTeam):
-        output = "{} {}".format(output, value_points(j + 1, numberEgality, duration, numberTeam, playerPerTeam, calculationMethod))
+        output = "{} {}".format(output, value_points(j + 1, numberEgality, duration, numberTeam, playerPerTeam, calculation_method))
     return output
